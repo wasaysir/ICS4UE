@@ -3,27 +3,32 @@ public class MyQueue{
 	//Attributes
 	
 	public StudentInfo frontOfQueue;
+	public StudentInfo rearOfQueue;
 	public int numInQueue = 0;
 	
 	//Methods
 	
 	public void enqueue(StudentInfo student) {
 		if(numInQueue == 0) {
-			
 			student.next = null;
 			frontOfQueue = student;
+			rearOfQueue = student;
 			numInQueue++;
 			return;
-			
 		} else {
 			
+			/*
 			StudentInfo tempStudent = frontOfQueue;
 			for(int i = 1; i < numInQueue; i++) {
 				tempStudent = tempStudent.next;
 			}
 			tempStudent.setNext(student);
 			numInQueue++;
+			*/
 			
+			rearOfQueue.next = student;
+			rearOfQueue = student;
+			return;
 		}
 	}
 	
@@ -32,10 +37,9 @@ public class MyQueue{
 			System.out.println("The queue is empty!");
 		}
 		else {
-			System.out.println("The queue contents from front to rear are:");
 			StudentInfo tempStudent = frontOfQueue;
 			for(int i = 0; i < numInQueue; i++) {
-				System.out.println("    " + tempStudent.studentNumber + ": " + tempStudent.firstName + " " + tempStudent.lastName);
+				System.out.println(tempStudent.firstName + " " + tempStudent.lastName + ": " + tempStudent.studentNumber);
 				tempStudent = tempStudent.next;
 			}
 		}

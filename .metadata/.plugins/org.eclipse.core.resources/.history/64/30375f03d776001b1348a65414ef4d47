@@ -3,27 +3,33 @@ public class MyQueue{
 	//Attributes
 	
 	public StudentInfo frontOfQueue;
+	public StudentInfo rearOfQueue;
 	public int numInQueue = 0;
 	
 	//Methods
 	
 	public void enqueue(StudentInfo student) {
 		if(numInQueue == 0) {
-			
 			student.next = null;
 			frontOfQueue = student;
+			rearOfQueue = student;
 			numInQueue++;
 			return;
-			
 		} else {
 			
+			/*
 			StudentInfo tempStudent = frontOfQueue;
 			for(int i = 1; i < numInQueue; i++) {
 				tempStudent = tempStudent.next;
 			}
 			tempStudent.setNext(student);
 			numInQueue++;
+			*/
 			
+			rearOfQueue.next = student;
+			rearOfQueue = student;
+			numInQueue++;
+			return;
 		}
 	}
 	
@@ -44,6 +50,12 @@ public class MyQueue{
 	public StudentInfo dequeue() {
 		if(frontOfQueue == null) {
 			return null;
+		} else if(numInQueue == 1) {
+			StudentInfo tempStudent = frontOfQueue;
+			frontOfQueue = null;
+			rearOfQueue = null;
+			numInQueue--;
+			return tempStudent;
 		} else {
 			StudentInfo tempStudent = frontOfQueue;
 			frontOfQueue = tempStudent.next;

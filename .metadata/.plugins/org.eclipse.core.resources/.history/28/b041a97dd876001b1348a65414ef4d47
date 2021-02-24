@@ -18,14 +18,10 @@ public class TestStackQueue {
 		theS.peek();
 		theS.pop();
 		
+		
 		for(int i = 0; i < 100; i++) {
 			theS.push(new StudentInfo(i, Integer.toString(i), Integer.toString(i)));
 		}
-		
-		System.out.println("\nAbout to display the stack (top to bottom)!");
-		theS.displayStack();
-		
-		removedStudent = theS.pop();
 		
 		someStudent = new StudentInfo(111111, "Daffy", "Duck", 20, 10);
 		theS.push(someStudent);
@@ -41,11 +37,6 @@ public class TestStackQueue {
 			System.out.println("\npopped item is " + removedStudent.firstName);
 			System.out.println("attribute next has value " + removedStudent.next);
 		}
-		
-		for(int i = 0; i < 100; i++) {
-			theS.pop();
-		}
-		
 		System.out.println("\nAbout to display the stack (top to bottom)!");
 		theS.displayStack();
 		

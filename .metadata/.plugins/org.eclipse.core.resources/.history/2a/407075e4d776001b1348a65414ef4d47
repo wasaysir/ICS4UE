@@ -12,6 +12,7 @@ public class MyQueue{
 			
 			student.next = null;
 			frontOfQueue = student;
+			rearOfQueue = student;
 			numInQueue++;
 			return;
 			
