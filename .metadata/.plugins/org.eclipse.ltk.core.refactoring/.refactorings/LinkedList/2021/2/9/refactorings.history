@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;StudentInfo.java&apos; to &apos;StackQueue&apos;&#x0D;&#x0A;- Original project: &apos;LinkedList&apos;&#x0D;&#x0A;- Destination element: &apos;StackQueue&apos;&#x0D;&#x0A;- Original element: &apos;StudentInfo.java&apos;" description="Copy compilation unit" element1="/src&lt;{StudentInfo.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1614002268136" target="/StackQueue" units="1" version="1.0"/>
+</session>

@@ -1,0 +1,14 @@
+
+public class TestList {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		MyLL theLL = new MyLL();
+		
+		StudentInfo firstStudent = new StudentInfo(123456, "Daffy", "Duck");
+		theLL.addToRear(someStudent);
+		theLL.displayList();
+	}
+
+}

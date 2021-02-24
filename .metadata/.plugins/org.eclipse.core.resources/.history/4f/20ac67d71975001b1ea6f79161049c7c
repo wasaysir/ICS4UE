@@ -1,0 +1,18 @@
+public class MyQueue{
+	
+	//Attributes
+	
+	public StudentInfo front;
+	public int numInQueue = 0;
+	
+	//Methods
+	
+	public void enqueue() {
+		
+	}
+	
+	public void displayQueue() {
+		
+	}
+	
+}

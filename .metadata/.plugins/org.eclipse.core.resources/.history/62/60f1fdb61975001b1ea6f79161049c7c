@@ -1,0 +1,10 @@
+public class MyQueue{
+	
+	//Attributes
+	
+	StudentInfo front;
+	int numInQueue = 0;
+	
+	//Methods
+	
+}

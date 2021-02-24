@@ -1,0 +1,25 @@
+public class MyStack{
+	
+	//Attributes
+	
+	public StudentInfo top;
+	public int numInStack = 0;
+	
+	//Methods
+	
+	public void push(StudentInfo student) {
+		
+	}
+	
+	public void displayStack(int orderInStack) {
+		
+	}
+	
+	public StudentInfo pop(int orderInStack) {
+		return StudentInfo;
+	}
+	
+	public StudentInfo peek(int orderInStack) {
+		return StudentInfo;
+	}
+}

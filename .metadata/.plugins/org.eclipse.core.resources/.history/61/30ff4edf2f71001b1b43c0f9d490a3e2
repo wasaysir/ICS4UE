@@ -1,0 +1,19 @@
+
+public class TestList {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		MyLL theLL = new MyLL();
+		
+		for(int i = 0; i < 2000000; i++) {
+				theLL.addToRear(new StudentInfo(111109, "Crazy", "Frog"));
+		}
+		
+		StudentInfo zeroethStudent = new StudentInfo(111110, "Caffy", "Buck");
+		theLL.addToFront(zeroethStudent);
+		
+		theLL.displayList();
+	}
+
+}
