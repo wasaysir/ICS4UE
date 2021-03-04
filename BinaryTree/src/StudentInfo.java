@@ -8,7 +8,8 @@ public class StudentInfo {
 	public String lastName;
 	public double height; //in metres
 	public double weight; //in kg
-	public StudentInfo next; //pointer to next item in Linked List
+	public StudentInfo left; //pointer to left item in Binary Tree
+	public StudentInfo right; //pointer to right item in Binary Tree
 	
 	
 	// Constructors
@@ -19,7 +20,8 @@ public class StudentInfo {
 		lastName = "Leghorn";
 		height = -1.0;
 		weight = -1.0;
-		next = null;
+		left = null;
+		right = null;
 	}
 	
 public StudentInfo(int sN, String firstName, String lastName) {
@@ -29,7 +31,8 @@ public StudentInfo(int sN, String firstName, String lastName) {
 		this.lastName = lastName;
 		height = -1.0;
 		weight = -1.0;
-		next = null;
+		left = null;
+		right = null;
 		
 	}
 	
@@ -40,7 +43,8 @@ public StudentInfo(int sN, String firstName, String lastName) {
 		this.lastName = lastName;
 		height = h;
 		weight = w;
-		next = null;
+		left = null;
+		right = null;
 	}
 	
 	
@@ -54,8 +58,12 @@ public StudentInfo(int sN, String firstName, String lastName) {
 		studentNumber = theSN;
 	}
 	
-	public void setNext(StudentInfo SI) {
-		next = SI;
+	public void setLeft(StudentInfo LeftStudent) {
+		left = LeftStudent;
+	}
+	
+	public void setRight(StudentInfo RightStudent) {
+		right = RightStudent;
 	}
 	
 	public double calcBMI() {
