@@ -5,32 +5,32 @@ public class MyBinaryTree {
 	public StudentInfo root;
 	public int numInTree;
 	
-	public MyBinaryTree(){
+	public MyBinaryTree(){ //Initializes empty Binary Tree
 		root = null;
 		numInTree = 0;
 	}
 	
-	public MyBinaryTree(StudentInfo rootStudent){
+	public MyBinaryTree(StudentInfo rootStudent){ //Initializes Binary Tree with root
 		root = rootStudent;
 		numInTree = 1;
 	}
 	
 	public void addToTree(StudentInfo currentRoot, StudentInfo itemToAdd) {
-		if(numInTree == 0) {
+		if(numInTree == 0) { //Sets the root node for the tree
 			root = itemToAdd;
 			numInTree++;
-		} else if(currentRoot == null) {
+		} else if(currentRoot == null) { //Sets node in this location if its null
 			currentRoot = itemToAdd;
 			numInTree++;
 			return;
 		} else if(currentRoot.studentNumber > itemToAdd.studentNumber) {
-			if(currentRoot.left == null) {
-				currentRoot.left = itemToAdd;
+			if(currentRoot.left == null) { //Sets node on left side if less than current root and left child is empty
+				currentRoot.left = itemToAdd; 
 				numInTree++;
 				return;
 			}
 			else{
-				addToTree(currentRoot.left, itemToAdd);
+				addToTree(currentRoot.left, itemToAdd); //If left child is not empty, recursively calls to itself
 			}
 		} else if(currentRoot.studentNumber < itemToAdd.studentNumber) {
 			if(currentRoot.right == null) {
