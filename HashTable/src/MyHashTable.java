@@ -42,6 +42,7 @@ public class MyHashTable {
 				return buckets[studentBucket].remove(i);
 			}
 		}
+		System.out.println("Student not in table");
 		return null;
 	}
 	
@@ -52,6 +53,7 @@ public class MyHashTable {
 				return buckets[studentBucket].get(i);
 			}
 		}
+		System.out.println("Student not in table");
 		return null;
 	}
 	
