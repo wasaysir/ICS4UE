@@ -5,7 +5,7 @@ public class MyHashTable {
 	// ATTRIBUTES
 	// buckets is an array of Arraylists that hold references to StudentInfo objects.
 	
-	public ArrayList<StudentInfo>[] buckets;
+	public ArrayList<EmployeeInfo>[] buckets;
 	
 	@SuppressWarnings("unchecked")
 	public MyHashTable(int numBuckets) {
@@ -16,49 +16,49 @@ public class MyHashTable {
 		
 		//Instantiates ArrayList for each element in array.
 		for (int i = 0; i < numBuckets; i++) {
-			buckets[i] = new ArrayList<StudentInfo>();
+			buckets[i] = new ArrayList<EmployeeInfo>();
 		}
 		
 	}
 	
 	// METHODS
 	
-	public int hashFunction(int studentNumber) {
-		return (studentNumber % buckets.length); //Student number modulo number of buckets
+	public int hashFunction(int employeeNumber) {
+		return (employeeNumber % buckets.length); //Student number modulo number of buckets
 	}
 	
-	public void addToTable(StudentInfo currentStudent) {
-		if(currentStudent != null) {
-			int studentBucket = hashFunction(currentStudent.studentNumber);
-			buckets[studentBucket].add(currentStudent);
+	public void addToTable(EmployeeInfo currentEmployee) {
+		if(currentEmployee != null) {
+			int employeeBucket = hashFunction(currentEmployee.empNumber);
+			buckets[employeeBucket].add(currentEmployee);
 			return;
 		}
 	}
 	
-	public StudentInfo removeFromTable(int studentNumber) {
-		int studentBucket = hashFunction(studentNumber);
-		for(int i = 0; i < buckets[studentBucket].size(); i++) {
-			if(buckets[studentBucket].get(i).studentNumber == studentNumber) {
-				return buckets[studentBucket].remove(i);
+	public EmployeeInfo removeFromTable(int employeeNumber) {
+		int employeeBucket = hashFunction(employeeNumber);
+		for(int i = 0; i < buckets[employeeBucket].size(); i++) {
+			if(buckets[employeeBucket].get(i).empNumber == employeeNumber) {
+				return buckets[employeeBucket].remove(i);
 			}
 		}
-		System.out.println("Student not in table");
+		System.out.println("Employee not in table");
 		return null;
 	}
 	
-	public StudentInfo getFromTable(int studentNumber) {
-		int studentBucket = hashFunction(studentNumber);
-		for(int i = 0; i < buckets[studentBucket].size(); i++) {
-			if(buckets[studentBucket].get(i).studentNumber == studentNumber) {
-				return buckets[studentBucket].get(i);
+	public EmployeeInfo getFromTable(int employeeNumber) {
+		int employeeBucket = hashFunction(employeeNumber);
+		for(int i = 0; i < buckets[employeeBucket].size(); i++) {
+			if(buckets[employeeBucket].get(i).empNumber == employeeNumber) {
+				return buckets[employeeBucket].get(i);
 			}
 		}
-		System.out.println("Student not in table");
+		System.out.println("Employee not in table");
 		return null;
 	}
 	
-	public boolean isInTable(int studentNumber) {
-		if(getFromTable(studentNumber) == null) {
+	public boolean isInTable(int employeeNumber) {
+		if(getFromTable(employeeNumber) == null) {
 			return false;
 		} else {
 			return true;
@@ -66,15 +66,15 @@ public class MyHashTable {
 	}
 	
 	public void displayTable() {
-		StudentInfo currentStudent;
+		EmployeeInfo currentEmployee;
 		for(int i = 0; i < buckets.length; i++) {
 			System.out.println("Contents for bucket " + i);
 			if (buckets[i].size() == 0) {
 				System.out.println("   No items in this bucket");
 			} else {
 				for (int j = 0; j < buckets[i].size(); j++) {
-					currentStudent = buckets[i].get(j);
-					System.out.println("   " + currentStudent.studentNumber + ": " + currentStudent.firstName + " " + currentStudent.lastName);
+					currentEmployee = buckets[i].get(j);
+					System.out.println("   " + currentEmployee.empNumber + ": " + currentEmployee.firstName + " " + currentEmployee.lastName);
 				}
 			}
 		}
